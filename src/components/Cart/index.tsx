@@ -18,17 +18,17 @@ const Cart: React.FC = () => {
           <th>Quantidade</th>
           <th>Subtotal</th>
         </tr>
-        <tbody>
-          {items.map(item => (
-            <tr key={item.product.id}>
-              <td>{item.product.title}</td>
-              <td>{item.product.price}</td>
-              <td>{item.quantity}</td>
-              <td>{(item.quantity * item.product.price).toFixed(2)}</td>
-            </tr>
-          ))}
-        </tbody>
       </thead>
+      <tbody>
+        {items.map(item => (
+          <tr key={item.product.id}>
+            <td>{item.product.title}</td>
+            <td>{item.product.price}</td>
+            <td>{item.quantity}</td>
+            <td>{(item.quantity * item.product.price).toFixed(2)}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 }
