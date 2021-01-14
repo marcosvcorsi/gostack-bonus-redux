@@ -10,5 +10,6 @@ export interface ICartItem {
 }
 
 export interface ICartState {
-  items: ICartItem[]
+  items: ICartItem[];
+  outOfStock: number[]
 }

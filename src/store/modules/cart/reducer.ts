@@ -1,10 +1,11 @@
 import { Reducer } from "redux";
 import produce from 'immer';
 import { ICartState } from "./types";
-import { ADD_PRODUCT_TO_CART_SUCCESS } from "./actions";
+import { ADD_PRODUCT_TO_CART_FAILURE, ADD_PRODUCT_TO_CART_SUCCESS } from "./actions";
 
 const INITIAL_STATE: ICartState = {
-  items: []
+  items: [],
+  outOfStock: []
 }
 
 const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
@@ -25,6 +26,10 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
         }
 
         break;
+      case ADD_PRODUCT_TO_CART_FAILURE: 
+        draft.outOfStock.push(action.payload.productId);  
+
+        break;  
     }
   })
 
