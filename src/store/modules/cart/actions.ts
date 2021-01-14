@@ -1,14 +1,8 @@
-import { IProduct } from "./types";
-
-export const ADD_PRODUCT_TO_CART_REQUEST = 'ADD_PRODUCT_TO_CART_REQUEST';
-
-export const ADD_PRODUCT_TO_CART_SUCCESS = 'ADD_PRODUCT_TO_CART_SUCCESS';
-
-export const ADD_PRODUCT_TO_CART_FAILURE = 'ADD_PRODUCT_TO_CART_FAILURE';
+import { ActionsTypes, IProduct } from "./types";
 
 export function addProductToCartRequest(product: IProduct) {
   return {
-    type: ADD_PRODUCT_TO_CART_REQUEST,
+    type: ActionsTypes.ADD_PRODUCT_TO_CART_REQUEST,
     payload: {
       product
     }
@@ -17,7 +11,7 @@ export function addProductToCartRequest(product: IProduct) {
 
 export function addProductToCartSuccess(product: IProduct) {
   return {
-    type: ADD_PRODUCT_TO_CART_SUCCESS,
+    type: ActionsTypes.ADD_PRODUCT_TO_CART_SUCCESS,
     payload: {
       product
     }
@@ -26,7 +20,7 @@ export function addProductToCartSuccess(product: IProduct) {
 
 export function addProductToCartFailure(productId: number) {
   return {
-    type: ADD_PRODUCT_TO_CART_FAILURE,
+    type: ActionsTypes.ADD_PRODUCT_TO_CART_FAILURE,
     payload: {
       productId
     }
